@@ -1,0 +1,175 @@
+/* 🌩️ Full-Screen Background */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    overflow: hidden;
+}
+
+/* 🎥 Background Video */
+#background-video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.9;
+}
+
+/* ⚡ Lightning Overlay */
+#lightning {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0;
+    z-index: -1;
+    animation: lightning-flash 3s infinite;
+}
+
+/* 🔨 Mjolnir */
+#mjolnir {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    width: 120px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(0 0 25px #00aaff);
+    animation: hammer-glow 1.5s infinite alternate, mjolnir-move 1s ease-in-out forwards;
+}
+
+/* 🪓 Stormbreaker */
+#stormbreaker {
+    position: absolute;
+    top: 50%;
+    right: 22%;
+    width: 130px;
+    transform: rotate(20deg);
+    filter: drop-shadow(0 0 25px #00aaff);
+    animation: axe-glow 1.5s infinite alternate, stormbreaker-move 1s ease-in-out forwards;
+}
+
+/* ⚡ Electric Sparks (for Lightning Effect) */
+@keyframes electric-sparks {
+    0%, 100% { filter: drop-shadow(0 0 10px #00aaff); }
+    50% { filter: drop-shadow(0 0 35px #00aaff); }
+}
+
+/* 🌩️ Add Lightning Bolts around Mjolnir */
+#mjolnir::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('lightning.png') no-repeat center;
+    background-size: contain;
+    top: -30px;
+    left: 20px;
+    opacity: 0.8;
+    animation: electric-sparks 0.8s infinite;
+}
+
+/* 🌩️ Add Lightning Bolts around Stormbreaker */
+#stormbreaker::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('lightning.png') no-repeat center;
+    background-size: contain;
+    top: -30px;
+    right: 20px;
+    opacity: 0.8;
+    animation: electric-sparks 0.8s infinite;
+}
+
+/* ⚡ Lightning Flash Effect */
+@keyframes lightning-flash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.4; }
+}
+
+/* 🔨 Mjolnir Movement */
+@keyframes mjolnir-move {
+    0% { left: -150px; opacity: 0; }
+    100% { left: 22%; opacity: 1; }
+}
+
+/* 🪓 Stormbreaker Movement */
+@keyframes stormbreaker-move {
+    0% { right: -150px; opacity: 0; }
+    100% { right: 22%; opacity: 1; }
+}
+
+/* 🌟 Login Box */
+.login-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    animation: fade-in 1.5s ease-in-out 1.5s forwards;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+}
+
+/* ⚡ Input Fields */
+.login-box input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* 🌀 Input Glow on Focus */
+.login-box input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* ⚡ Lightning Glow Button */
+.login-box button {
+    padding: 12px 18px;
+    border: none;
+    background: linear-gradient(to right, #ffcc00, #ff3300);
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+    animation: pulse 1.5s infinite alternate;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+/* ⚡ Button Hover */
+.login-box button:hover {
+    background: linear-gradient(to right, #ff6600, #ffcc00);
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* 🌩️ Fade-in Effect */
+@keyframes fade-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 🌀 Button Pulsing */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}

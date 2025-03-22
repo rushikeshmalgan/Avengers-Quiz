@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Avengers Quiz</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- Background Video (Thor Theme) -->
+    <video id="background-video" autoplay loop muted>
+        <source src="videos/thor_background.mp4" type="video/mp4">
+    </video>
+
+    <!-- Mjolnir (Thor's Hammer) -->
+    <img id="mjolnir" src="images/mjolnir.png" alt="Mjolnir">
+
+    <!-- Stormbreaker -->
+    <img id="stormbreaker" src="images/Stormbreaker.png" alt="Stormbreaker">
+
+    <div id="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-status"></p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

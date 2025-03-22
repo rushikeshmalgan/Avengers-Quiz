@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers 3D Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="banner">
+        <!-- Heading -->
+        <div class="content">
+            <h1>AVENGERS QUIZ</h1>
+            <h2 class="tagline">Find out which Avenger matches your personality!</h2>
+            <p class="description">
+                Answer fun and exciting questions to discover which Marvel superhero you truly are.
+            </p>
+        </div>
+
+        <!-- 3D Circular Slider -->
+        <div class="slider" style="--quantity: 9;">
+            <div class="item" style="--position: 0;"><img src="images/Iron Man.jpg" alt="Iron Man"></div>
+            <div class="item" style="--position: 1;"><img src="images/Cap.jpg" alt="Captain America"></div>
+            <div class="item" style="--position: 2;"><img src="images/Thor.jpg" alt="Thor"></div>
+            <div class="item" style="--position: 3;"><img src="images/Spidey.jpg" alt="Spider-Man"></div>
+            <div class="item" style="--position: 4;"><img src="images/Black Widow.jpg" alt="Black Widow"></div>
+            <div class="item" style="--position: 5;"><img src="images/Hulk.jpg" alt="Hulk"></div>
+            <div class="item" style="--position: 6;"><img src="images/Hawkeye.jpg" alt="Hawkeye"></div>
+            <div class="item" style="--position: 7;"><img src="images/Black Panther.jpg" alt="Black Panther"></div>
+            <div class="item" style="--position: 8;"><img src="images/Doctor Strange.jpg" alt="Doctor Strange"></div>
+        </div>
+
+        <!-- Buttons Container -->
+        <div class="buttons">
+            <a href="quiz.html" class="start-quiz-btn">Start Quiz</a>
+
+            <!-- Login & Signup Buttons -->
+            <div class="auth-buttons">
+                <a href="login.html" class="auth-btn login-btn">Login</a>
+                <a href="signup.html" class="auth-btn signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgm" src="audios/index_bgm.mp3" loop></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const bgm = document.getElementById("bgm");
+            bgm.volume = 0.5; // Adjust volume as needed
+
+            // Try to play immediately (may be blocked by browser)
+            bgm.play().catch(() => {
+                console.log("Autoplay blocked, waiting for user interaction.");
+            });
+
+            // Play music when user clicks anywhere
+            document.body.addEventListener("click", function() {
+                if (bgm.paused) {
+                    bgm.play();
+                }
+            }, { once: true }); // Ensures it triggers only once
+        });
+    </script>
+
+</body>
+</html>

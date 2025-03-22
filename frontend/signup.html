@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Avengers Quiz</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted>
+        <source src="videos/spiderman.mp4" type="video/mp4">
+    </video>
+
+    <!-- Web Sling -->
+    <div id="web-thread"></div>
+
+    <!-- Spiderman Image -->
+    <img id="spiderman" src="images/spiderman.png.png" alt="Spiderman">
+
+    <div id="signup-container">
+        <div class="signup-box">
+            <h2>Signup</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="signup()">Signup</button>
+            <p id="signup-status"></p>
+        </div>
+    </div>
+
+    <audio id="web-sound" src="web-sling.mp3"></audio>
+
+    <script src="signup.js"></script>
+</body>
+
+</html>

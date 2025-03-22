@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Avengers Personality Quiz</title>
+    <link rel="stylesheet" href="q.css">
+</head>
+<body>
+
+    <div id="quiz-container">
+        <h1>Which Avenger Are You?</h1>
+        
+        <!-- Animated Progress Bar -->
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Question -->
+        <p id="question-text">Loading...</p>
+        
+        <!-- Answer Buttons -->
+        <div id="answer-buttons">
+            <button class="choice-btn" onclick="selectAnswer(0)">Option 1</button>
+            <button class="choice-btn" onclick="selectAnswer(1)">Option 2</button>
+            <button class="choice-btn" onclick="selectAnswer(2)">Option 3</button>
+            <button class="choice-btn" onclick="selectAnswer(3)">Option 4</button>
+        </div>
+
+        <!-- Next Button -->
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+
+        <!-- Know More Button (Initially Hidden) -->
+        <button id="know-more-btn" onclick="window.location.href='avengers-details.html'">Know More</button>
+    </div>
+
+    <script src="q.js"></script>
+</body>
+</html>
